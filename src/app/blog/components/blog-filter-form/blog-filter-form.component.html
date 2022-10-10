@@ -1,0 +1,29 @@
+<form (ngSubmit)="filter()" autocomplete="off" [formGroup]="myForm">
+	<label for="title" class="block mb-1">Título:</label>
+
+	<input pInputText type="text" id="title" class="w-full mb-7 p-2 rounded-sm" formControlName="title" placeholder="Título" />
+
+	<div class="sm:flex sm:justify-between sm:items-center sm:gap-5 lg:block">
+		<div class="sm:flex-1">
+			<label for="date-from" class="block mb-1">Desde:</label>
+
+			<p-calendar inputId="date-from" class="calendar block w-full mb-7" formControlName="dateFrom" [maxDate]="maxDate" dateFormat="dd-mm-yy" [readonlyInput]="true" [touchUI]="true" inputId="touchui" placeholder="Fecha desde"></p-calendar>
+		</div>
+
+		<div class="sm:flex-1">
+			<label for="date-to" class="block mb-1">Hasta:</label>
+
+			<p-calendar inputId="date-to" class="calendar block w-full mb-7" formControlName="dateTo" [maxDate]="maxDate" dateFormat="dd-mm-yy" [readonlyInput]="true" [touchUI]="true" inputId="touchui" placeholder="Fecha hasta"></p-calendar>
+		</div>
+	</div>
+
+	<div class="mb-5">
+		<small *ngIf="validDate()" class="p-error block">Ambas fechas no deben ser mayores a la actual.</small>
+	</div>
+
+	<div class="flex justify-between items-center gap-5">
+		<button dtvTextButton label="Limpiar" color="secondary" design="outlined" type="reset" class="w-full"></button>
+
+		<button dtvTextButton label="Filtrar" color="secondary" design="filled" type="submit" class="w-full"></button>
+	</div>
+</form>

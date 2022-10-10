@@ -1,0 +1,64 @@
+:host {
+	display: block;
+}
+
+.button {
+	transition: box-shadow 0.1s;
+}
+
+.image-text {
+	box-shadow: 0px 10px 20px 1px #c084fc61;
+}
+
+.reverse {
+	.image {
+		@apply -order-1;
+	}
+}
+
+.middle-layout {
+	.text,
+	.image {
+		@apply basis-1/2;
+	}
+}
+
+.small-right-layout {
+	.text {
+		@apply basis-3/5;
+	}
+
+	.image {
+		@apply basis-2/5;
+	}
+}
+
+.small-left-layout {
+	.text {
+		@apply basis-2/5;
+	}
+
+	.image {
+		@apply basis-3/5;
+	}
+}
+
+.image-c {
+	clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+}
+
+.image-ltr {
+	clip-path: polygon(0% 0%, 10% 100%, 100% 100%, 100% 0%);
+}
+
+.image-rtl {
+	clip-path: polygon(10% 0%, 0% 100%, 100% 100%, 100% 0%);
+}
+
+.image-ltr-reverse {
+	clip-path: polygon(0% 0%, 0% 100%, 90% 100%, 100% 0%);
+}
+
+.image-rtl-reverse {
+	clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 90% 0%);
+}

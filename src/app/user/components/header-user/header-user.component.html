@@ -1,0 +1,15 @@
+<div class="flex justify-center items-center">
+	<div>
+		<p class="font-medium text-2xl break-words">{{ user?.name + " " + user?.lastName }}</p>
+
+		<a class="text-sm text-blue-600 underline">Cerar sesión</a>
+	</div>
+</div>
+
+<p-divider class="block"></p-divider>
+
+<div class="mx-auto flex justify-between items-center lg:w-3/4 lg:flex-col lg:items-stretch">
+	<a *ngFor="let button of buttons" type="button" class="flex-1 text-center" dtvTextButton [label]="button.label" color="tertiary" [routerLink]="button.link" routerLinkActive="btn-outlined-tertiary" [routerLinkActiveOptions]="{ exact: true }"></a>
+</div>
+
+<p-divider class="block"></p-divider>

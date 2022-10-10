@@ -1,0 +1,33 @@
+:host {
+	display: block;
+}
+
+.hover-figure {
+	transition: border 0.3s;
+
+	img {
+		transition: transform 0.3s;
+	}
+
+	figcaption {
+		transition: padding 0.3s;
+
+		h4 {
+			transition: margin 0.3s;
+		}
+	}
+}
+
+.hover-figure:hover {
+	img {
+		@apply scale-110;
+	}
+
+	figcaption {
+		@apply pb-10;
+
+		h4 {
+			@apply mt-3;
+		}
+	}
+}

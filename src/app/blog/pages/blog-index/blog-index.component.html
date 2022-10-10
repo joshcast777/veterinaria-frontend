@@ -1,0 +1,35 @@
+<!-- Header Page -->
+<cmp-header-page class="mb-10" title="Blog"></cmp-header-page>
+
+<!-- Body Section -->
+<div class="ctr px-2 mb-10 lg:flex lg:gap-3">
+	<!-- Filter Container Section -->
+	<!-- <div class="form-container mb-5 lg:w-24" #formContainer>
+		<div class="border rounded p-0.5 lg:p-0 lg:border-none lg:sticky lg:top-16">
+			<p-fieldset class="field-toggle lg:hidden" legend="Filtro" [toggleable]="true" [collapsed]="true">
+				<cmp-blog-filter-form></cmp-blog-filter-form>
+			</p-fieldset>
+
+			<div class="h-16 hidden lg:block">
+				<div class="flex justify-between items-center mb-5">
+					<h3 class="fonst-semibold text-lg">Filtro</h3>
+
+					<button #sideButton dtvIconButton primeIcon="pi-angle-right" type="button" class="side-button" (click)="toggleSidePanel()"></button>
+				</div>
+
+				<p-divider class="hidden lg:block"></p-divider>
+
+				<div #form class="form lg:opacity-0">
+					<cmp-blog-filter-form></cmp-blog-filter-form>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+	<!-- <p-divider class="lg:hidden"></p-divider>
+
+	<p-divider class="hidden lg:block" layout="vertical"></p-divider> -->
+
+	<!-- Blogs Section -->
+	<cmp-blogs class="lg:flex-1" [blogs]="Blogs"></cmp-blogs>
+</div>

@@ -1,0 +1,33 @@
+<!-- Header Page -->
+<cmp-header-page title="Nosotros" class="md:mb-10"></cmp-header-page>
+
+<cmp-section-divider></cmp-section-divider>
+
+<div class="ctr px-2 lg:flex lg:justify-between lg:items-start lg:gap-6">
+	<div class="lg:flex-1">
+		<!-- About Section -->
+		<cmp-text-image [textImage]="AboutSection[0]" [layout]="AboutSection[1]"></cmp-text-image>
+
+		<cmp-section-divider></cmp-section-divider>
+
+		<!-- Choise Section -->
+		<cmp-choice></cmp-choice>
+	</div>
+
+	<cmp-section-divider class="lg:hidden"></cmp-section-divider>
+
+	<!-- Aside Section -->
+	<cmp-aside class="lg:basis-1/4"></cmp-aside>
+</div>
+
+<cmp-section-divider></cmp-section-divider>
+
+<!-- Installations Section -->
+<cmp-installations></cmp-installations>
+
+<cmp-section-divider></cmp-section-divider>
+
+<!-- Team Section -->
+<cmp-title label="Nuestro equipo"></cmp-title>
+
+<cmp-cards class="mb-10" [cards]="Team"></cmp-cards>

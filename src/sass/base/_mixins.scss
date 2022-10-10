@@ -1,0 +1,17 @@
+@mixin btn-text($type, $color) {
+	.btn-text-#{$type} {
+		@apply text-#{$color}-500 hover:bg-#{$color}-200/50 focus:bg-#{$color}-200/50 active:bg-#{$color}-200;
+	}
+}
+
+@mixin btn-outlined($type, $color) {
+	.btn-outlined-#{$type} {
+		@apply text-#{$color}-500 border border-#{$color}-500 hover:bg-#{$color}-200/50 focus:bg-#{$color}-200/50 active:bg-#{$color}-200;
+	}
+}
+
+@mixin btn-filled($type, $color) {
+	.btn-filled-#{$type} {
+		@apply text-slate-50 bg-#{$color}-500 border border-#{$color}-500 hover:bg-#{$color}-600 hover:border-#{$color}-600 focus:bg-#{$color}-600 focus:border-#{$color}-600;
+	}
+}

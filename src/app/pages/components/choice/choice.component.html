@@ -1,0 +1,13 @@
+<cmp-title label="¿Por qué elegirnos?"></cmp-title>
+
+<div class="tile-layout">
+	<div *ngFor="let op of options" class="tile relative shadow-lg p-7 bg-purple-100 text-center">
+		<div class="flex justify-center items-center gap-5">
+			<i class="{{ op.icon }} text-green-500 text-3xl"></i>
+
+			<h3 class="my-5 text-2xl font-medium align-middle">{{ op.title }}</h3>
+		</div>
+
+		<p>{{ op.body }}</p>
+	</div>
+</div>

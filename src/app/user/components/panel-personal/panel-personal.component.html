@@ -1,0 +1,39 @@
+<p-panel class="panel" header="Personales">
+	<ng-template pTemplate="icons">
+		<button type="button" dtvIconButton primeIcon="pi-pencil" (click)="myForm.enable()"></button>
+	</ng-template>
+
+	<ng-template pTemplate="content">
+		<form (ngSubmit)="editPersonal()" autocomplete="off" [formGroup]="myForm">
+			<div class="mb-7 lg:flex lg:justify-between lg:items-center lg:gap-5">
+				<label for="name" class="block mb-1 lg:w-28 lg:text-right lg:mb-0">Nombre:</label>
+
+				<input pInputText type="text" id="name" class="w-full p-2 rounded-sm" formControlName="name" />
+			</div>
+
+			<div class="mb-7 lg:flex lg:justify-between lg:items-center lg:gap-5">
+				<label for="lastName" class="block mb-1 lg:w-28 lg:text-right lg:mb-0">Apellido:</label>
+
+				<input pInputText type="text" id="lastName" class="w-full p-2 rounded-sm" formControlName="lastName" />
+			</div>
+
+			<div class="mb-7 lg:flex lg:justify-between lg:items-center lg:gap-5">
+				<label for="phone" class="block mb-1 lg:w-28 lg:text-right lg:mb-0">Número celular:</label>
+
+				<input pInputText type="text" id="phone" class="w-full p-2 rounded-sm md:mb-0" formControlName="phone" />
+			</div>
+
+			<div class="mb-7 lg:flex lg:justify-between lg:items-center lg:gap-5">
+				<label for="address" class="block mb-1 lg:w-28 lg:text-right lg:mb-0">Dirección:</label>
+
+				<input pInputText type="text" id="address" class="w-full p-2 rounded-sm" formControlName="address" />
+			</div>
+
+			<div *ngIf="!myForm.disabled" class="flex justify-end items-center gap-3">
+				<button dtvTextButton label="Cancelar" color="secondary" design="outlined" class="w-40" (click)="cancel()"></button>
+
+				<button dtvTextButton label="Guardar" color="secondary" design="filled" type="submit" class="w-40"></button>
+			</div>
+		</form>
+	</ng-template>
+</p-panel>

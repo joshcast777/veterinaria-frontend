@@ -1,0 +1,49 @@
+:host {
+	display: block;
+
+	::ng-deep .social-links i {
+		@apply text-2xl text-black;
+	}
+}
+
+.card-layout {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+
+@media (min-width: 640px) {
+	.card-layout {
+		flex-direction: row;
+
+		.card {
+			flex-basis: calc(50% - 30px);
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	.card-layout {
+		.card {
+			flex-basis: calc((100% / 3) - 30px);
+		}
+	}
+}
+
+@media (min-width: 1280px) {
+	.card-layout {
+		.card {
+			flex-basis: calc(25% - 30px);
+		}
+	}
+}
+
+@media (min-width: 1536px) {
+	.card-layout {
+		.card {
+			flex-basis: calc((100% / 5) - 30px);
+		}
+	}
+}

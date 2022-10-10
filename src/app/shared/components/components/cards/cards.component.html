@@ -1,0 +1,15 @@
+<div class="ctr px-2 card-layout">
+	<div *ngFor="let card of cards" class="card shadow-md rounded-md">
+		<div class="h-64 rounded-t-md">
+			<img class="w-full h-full object-cover rounded-t-md" [src]="card.imagePath | image" [alt]="card.imagePath" />
+		</div>
+
+		<div class="px-5 pb-5">
+			<h3 class="mt-5 mb-2 text-2xl font-semibold">{{ card.title }}</h3>
+
+			<h4 class="mb-5 text-xl font-medium">{{ card.subtitle }}</h4>
+
+			<p>{{ card.body }}</p>
+		</div>
+	</div>
+</div>

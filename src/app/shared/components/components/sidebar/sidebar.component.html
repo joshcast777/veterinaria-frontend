@@ -1,0 +1,11 @@
+<p-sidebar [(visible)]="Visible" [baseZIndex]="10000">
+	<img class="h-14 mx-auto cursor-pointer" [src]="'logo' | svg" alt="logo" routerLink="/" (click)="Visible = false" />
+
+	<p-divider></p-divider>
+
+	<h2 class="text-xl font-bold mb-3">Menú</h2>
+
+	<nav class="flex flex-col">
+		<a *ngFor="let nav_item of NavItems" dtvTextButton [label]="nav_item.label" color="secondary" [routerLink]="[nav_item.link]" routerLinkActive="btn-outlined-secondary" [routerLinkActiveOptions]="{ exact: true }" class="my-0.5" (click)="Visible = false"></a>
+	</nav>
+</p-sidebar>

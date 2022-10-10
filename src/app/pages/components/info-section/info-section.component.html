@@ -1,0 +1,13 @@
+<div class="container mx-auto">
+	<div class="md:grid md:grid-cols-3">
+		<figure *ngFor="let section of sections" class="relative h-56 border-b-4 border-b-purple-400 overflow-hidden cursor-pointer hover-figure hover:border-b-fuchsia-600 lg:h-64" [routerLink]="section.link">
+			<img class="h-full w-full object-cover scale-100" [src]="section.imagePath | image" alt="example-image" />
+
+			<figcaption class="absolute bottom-0 left-0 w-full py-5 bg-gray-700/50 text-center text-white flex flex-col justify-end">
+				<span class="font-medium before:content-[''] before:inline-block before:mr-2 before:h-0.5 before:w-10 before:bg-white before:align-middle after:content-[''] after:inline-block after:ml-2 after:h-0.5 after:w-10 after:bg-white after:align-middle">Más información</span>
+
+				<h4 class="text-3xl font-bold mt-1">{{ section.label }}</h4>
+			</figcaption>
+		</figure>
+	</div>
+</div>

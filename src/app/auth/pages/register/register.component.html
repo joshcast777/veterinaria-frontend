@@ -1,0 +1,63 @@
+<div class="max-w-xl mx-auto my-10 px-2 lg:max-w-4xl">
+	<div class="rounded border border-purple-300 flex flex-col justify-center">
+		<div class="h-16 mx-auto my-2">
+			<img class="h-full w-auto" [src]="'logo' | svg" alt="logo" routerLink="/" />
+		</div>
+
+		<div class="px-3 py-5 border-y border-y-purple-300 bg-purple-50">
+			<h2 class="text-center font-semibold text-3xl mb-7">Registro de usuario</h2>
+
+			<div class="max-w-xl mx-auto">
+				<p-messages [(value)]="message" [closable]="false"></p-messages>
+			</div>
+
+			<form (ngSubmit)="register()" autocomplete="off" [formGroup]="myForm">
+				<div class="mb-7 md:flex md:justify-between md:items-center">
+					<div class="md:flex-1 md:pr-3">
+						<label for="dni" class="block mb-1">Cédula:</label>
+
+						<input pInputText type="text" id="dni" class="w-full mb-7 p-2 rounded-sm" formControlName="dni" />
+
+						<label for="name" class="block mb-1">Nombre:</label>
+
+						<input pInputText type="text" id="name" class="w-full mb-7 p-2 rounded-sm" formControlName="name" />
+
+						<label for="lastName" class="block mb-1">Apellido:</label>
+
+						<input pInputText type="text" id="lastName" class="w-full mb-7 p-2 rounded-sm" formControlName="lastName" />
+
+						<label for="phone" class="block mb-1">Número celular:</label>
+
+						<input pInputText type="text" id="phone" class="w-full mb-7 p-2 rounded-sm md:mb-0" formControlName="phone" />
+					</div>
+
+					<div class="md:flex-1 md:pl-3">
+						<label for="birthDate" class="block mb-1">Fecha de nacimiento:</label>
+
+						<p-calendar inputId="birthDate" class="calendar block w-full mb-7" formControlName="birthDate" dateFormat="dd-mm-yy" [readonlyInput]="true" [touchUI]="true" inputId="touchui"></p-calendar>
+
+						<label for="address" class="block mb-1">Dirección:</label>
+
+						<input pInputText type="text" id="address" class="w-full mb-7 p-2 rounded-sm" formControlName="address" />
+
+						<label for="email" class="block mb-1">Correo:</label>
+
+						<input pInputText type="text" id="email" class="w-full mb-7 p-2 rounded-sm" formControlName="email" />
+
+						<label for="password" class="block mb-1">Contraseña:</label>
+
+						<p-password class="mb-7" styleClass="w-full focus:w-full" inputId="password" formControlName="password" [feedback]="false" inputStyleClass="w-full p-2 rounded-sm focus:w-full"></p-password>
+					</div>
+				</div>
+
+				<div>
+					<button dtvTextButton label="Registrarse" color="secondary" design="filled" type="submit" class="w-full"></button>
+				</div>
+			</form>
+		</div>
+
+		<div class="p-3 bg-purple-50 text-center">
+			<a class="text-xs text-blue-600 underline md:ml-3" routerLink="/auth/login">Iniciar sesión</a>
+		</div>
+	</div>
+</div>

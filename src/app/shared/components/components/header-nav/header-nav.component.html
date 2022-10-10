@@ -1,0 +1,25 @@
+<header class="h-16 w-full bg-purple-50 shadow-md">
+	<div class="ctr p-2 h-full w-full lg:flex lg:justify-between lg:items-center">
+		<div class="h-full w-full flex justify-between items-center">
+			<div class="h-full flex items-center gap-x-5">
+				<button dtvIconButton primeIcon="pi-bars" type="button" class="lg:hidden" (click)="Visible = true"></button>
+
+				<img class="h-4/5 cursor-pointer lg:mr-2" [src]="'logo' | svg" alt="logo" routerLink="/" />
+
+				<nav class="hidden lg:flex">
+					<a *ngFor="let nav_item of NavItems" dtvTextButton [label]="nav_item.label" color="secondary" design="text" [routerLink]="[nav_item.link]" routerLinkActive="btn-outlined-secondary" [routerLinkActiveOptions]="{ exact: true }" class="mx-0.5"></a>
+				</nav>
+			</div>
+
+			<div *ngIf="user;else login" class="flex flex-col text-right">
+				<a class="cursor-pointer text-xl hover:underline" [routerLink]="['/user']" cla>{{ user.name + " " + user.lastName }}</a>
+
+				<a class="cursor-pointer text-gray-500 hover:underline" (click)="logout()">Cerrar sesión</a>
+			</div>
+
+			<ng-template #login>
+				<a dtvTextButton label="Iniciar" color="secondary" design="filled" routerLink="/auth/login">Iniciar</a>
+			</ng-template>
+		</div>
+	</div>
+</header>

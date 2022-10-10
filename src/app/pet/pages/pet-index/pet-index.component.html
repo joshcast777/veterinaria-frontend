@@ -1,0 +1,41 @@
+<h2 class="max-w-3xl mb-7 text-center font-bold text-5xl">Mascotas</h2>
+
+<div class="mb-7 flex justify-end">
+	<button type="button" dtvTextButton label="Nueva mascota" design="filled" routerLink="/user/pets/new"></button>
+</div>
+
+<div *ngIf="Pets.length === 0;else table" class="ctr px-2">
+	<p-messages [(value)]="message" [closable]="false"></p-messages>
+</div>
+
+<ng-template #table>
+	<table class="mx-auto rounded-sm divide-y divide-slate-300 border border-slate-300 mb-10">
+		<thead class="bg-gray-100">
+			<tr>
+				<th scope="col" class="px-3 py-2 w-48 font-semibold text-lg">Nombre</th>
+				<th scope="col" class="px-3 py-2 w-48 font-semibold text-lg">Animal</th>
+				<th scope="col" class="px-3 py-2 w-48 font-semibold text-lg">Edad</th>
+				<th scope="col" class="px-3 py-2 w-48 font-semibold text-lg">Vacunas</th>
+				<th scope="col" class="px-3 py-2 w-48 font-semibold text-lg">Sexo</th>
+				<th scope="col" class="px-3 py-2 w-48 font-semibold text-lg">Fecha de ingresado</th>
+				<th scope="col" class="px-3 py-2 w-48 font-semibold text-lg">Acciones</th>
+			</tr>
+		</thead>
+
+		<tbody class="bg-gray-50 divide-y divide-slate-300">
+			<tr *ngFor="let pet of Pets">
+				<td class="px-3 py-2 text-center">{{ pet.name }}</td>
+				<td class="px-3 py-2 text-center">{{ pet.animal }}</td>
+				<td class="px-3 py-2 text-center">{{ pet.age }}</td>
+				<td class="px-3 py-2 text-center">{{ pet.vaccines }}</td>
+				<td class="px-3 py-2 text-center">{{ pet.sex }}</td>
+				<td class="px-3 py-2 text-center">{{ pet.createdAt | date:"short" }}</td>
+				<td class="px-3 py-2 text-center">
+					<button type="button" dtvIconButton primeIcon="pi-pencil" [routerLink]="['/user/pets/edit', pet.petId]"></button>
+
+					<button type="button" dtvIconButton primeIcon="pi-trash" (click)="delete(pet.petId)"></button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</ng-template>

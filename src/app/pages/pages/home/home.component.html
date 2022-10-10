@@ -1,0 +1,24 @@
+<!-- Header Home -->
+<cmp-header-home-section></cmp-header-home-section>
+
+<cmp-section-divider></cmp-section-divider>
+
+<!-- About Section -->
+<cmp-text-image [textImage]="AboutSection[0]" [layout]="AboutSection[1]"></cmp-text-image>
+
+<cmp-section-divider></cmp-section-divider>
+
+<!-- Info Section -->
+<cmp-info-section></cmp-info-section>
+
+<cmp-section-divider></cmp-section-divider>
+
+<!-- Service Section -->
+<cmp-text-image [textImage]="ServiceSection[0]" [layout]="ServiceSection[1]" class="mb-10"></cmp-text-image>
+
+<cmp-cards [cards]="OnlyServices | slice: 0:4"></cmp-cards>
+
+<cmp-section-divider></cmp-section-divider>
+
+<!-- Pharmacy Section -->
+<cmp-pharmacy-section></cmp-pharmacy-section>

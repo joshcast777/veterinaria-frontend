@@ -1,0 +1,23 @@
+<div class="max-w-3xl mx-auto mb-7">
+    <h3 class="text-center mb-7 text-2xl font-semibold">Nueva cita</h3>
+
+    <form (ngSubmit)="save()" autocomplete="off" [formGroup]="myForm">
+        <div class="mb-7 lg:flex lg:justify-between lg:items-center lg:gap-5">
+            <label for="appointmentDate" class="block mb-1 lg:w-28 lg:text-right lg:mb-0">Fecha de la cita:</label>
+
+            <p-calendar inputId="birthDate" class="calendar block w-full" formControlName="appointmentDate" dateFormat="dd-mm-yy" [readonlyInput]="true" [touchUI]="true" inputId="touchui"></p-calendar>
+        </div>
+
+        <div class="mb-7 lg:flex lg:justify-between lg:items-center lg:gap-5">
+            <label for="reasons" class="block mb-1 lg:w-28 lg:text-right lg:mb-0">Motivo:</label>
+
+            <input pInputText type="text" id="reasons" class="w-full p-2 rounded-sm" formControlName="reasons" />
+        </div>
+
+        <div *ngIf="!myForm.disabled" class="flex justify-end items-center gap-3">
+            <button dtvTextButton label="Cancelar" color="secondary" design="outlined" class="w-40" type="reset" (click)="cancel()"></button>
+
+            <button dtvTextButton label="Guardar" color="secondary" design="filled" type="submit" class="w-40"></button>
+        </div>
+    </form>
+</div>

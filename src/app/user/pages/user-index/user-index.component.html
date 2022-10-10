@@ -1,0 +1,15 @@
+<div class="ctr px-2 mt-10">
+	<div class="lg:flex lg:justify-center lg:items-stretch">
+		<div class="lg:w-72">
+			<div class="lg:sticky lg:top-20">
+				<cmp-header-user [user]="user" class="lg:basis-80 xl:basis-96"></cmp-header-user>
+			</div>
+		</div>
+
+		<p-divider class="hidden lg:block" layout="vertical"></p-divider>
+
+		<div class="lg:flex-1">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</div>

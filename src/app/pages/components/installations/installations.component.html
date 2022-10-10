@@ -1,0 +1,35 @@
+<cmp-title label="Nuestras instalaciones"></cmp-title>
+
+<div class="ctr px-2 mb-5">
+	<!-- Accordion -->
+	<p-accordion class="md:hidden">
+		<p-accordionTab *ngFor="let installation of installations; let i = index" [header]="installation.header" [selected]="i === 0 ? true : false">
+			<div>
+				<img class="w-full object-cover" [src]="installation.map | image" />
+			</div>
+
+			<p-divider></p-divider>
+
+			<div>
+				<img class="w-full object-cover" [src]="installation.picture | image" />
+			</div>
+		</p-accordionTab>
+	</p-accordion>
+
+	<!-- TabView -->
+	<p-tabView class="hidden md:block">
+		<p-tabPanel *ngFor="let installation of installations" [header]="installation.header">
+			<div class="md:flex">
+				<div class="md:flex-1">
+					<img class="w-full object-cover" [src]="installation.map | image" />
+				</div>
+
+				<p-divider layout="vertical"></p-divider>
+
+				<div class="md:flex-1">
+					<img class="w-full object-cover" [src]="installation.picture | image" />
+				</div>
+			</div>
+		</p-tabPanel>
+	</p-tabView>
+</div>

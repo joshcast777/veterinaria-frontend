@@ -1,0 +1,40 @@
+<div class="max-w-3xl mx-auto mb-10">
+	<h3 class="mb-3 text-center font-bold text-2xl">Deja tus comentarios</h3>
+
+	<div *ngIf="!ValidatedToken">
+		<p-messages [(value)]="messageLogin" [closable]="false"></p-messages>
+	</div>
+
+	<form *ngIf="ValidatedToken" (ngSubmit)="comment()" autocomplete="off" [formGroup]="myForm">
+		<textarea rows="3" formControlName="comment" pInputTextarea class="text-are w-full" [autoResize]="true"></textarea>
+
+		<div class="flex justify-end">
+			<button type="submit" class="px-2" dtvTextButton label="Enviar" color="primary" design="filled"></button>
+		</div>
+	</form>
+
+	<p-divider></p-divider>
+	<p-divider></p-divider>
+	
+	<div>
+		<h4 class="my-5 text-center text-xl font-semibold">Comentarios</h4>
+
+		<p-divider></p-divider>
+
+		<div *ngIf="BlogComments.length === 0;else comments" class="ctr px-2">
+			<p-messages [(value)]="messageComments" [closable]="false"></p-messages>
+		</div>
+
+		<ng-template #comments>
+			<div *ngFor="let blogComment of BlogComments">
+				<div class="my-5">
+					<p class="p-2 rounded text-md">
+						<span class="text-lg font-medium">{{ blogComment.user.name + " " + blogComment.user.lastName }}</span> - <span class="text-md font-light">{{ blogComment.createdAt | date:"short" }}</span> - {{ blogComment.comment }}
+					</p>
+				</div>
+
+				<p-divider></p-divider>
+			</div>
+		</ng-template>
+	</div>
+</div>

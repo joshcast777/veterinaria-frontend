@@ -1,0 +1,27 @@
+<p-panel class="panel" header="Cuenta">
+	<ng-template pTemplate="icons">
+		<button type="button" dtvIconButton primeIcon="pi-pencil" (click)="myForm.enable()"></button>
+	</ng-template>
+
+	<ng-template pTemplate="content">
+		<form (ngSubmit)="editAccount()" autocomplete="off" [formGroup]="myForm">
+			<div class="mb-7 lg:flex lg:justify-between lg:items-center lg:gap-5">
+				<label for="email" class="block mb-1 lg:w-28 lg:text-right lg:mb-0">Correo:</label>
+
+				<input pInputText type="text" id="email" class="w-full p-2 rounded-sm" formControlName="email" />
+			</div>
+
+			<div class="mb-7 lg:flex lg:justify-between lg:items-center lg:gap-5">
+				<label for="password" class="block mb-1 lg:w-28 lg:text-right lg:mb-0">Contraseña:</label>
+
+				<p-password class="w-full" styleClass="w-full focus:w-full" inputId="password" formControlName="password" [feedback]="false" inputStyleClass="w-full p-2 rounded-sm focus:w-full"></p-password>
+			</div>
+
+			<div *ngIf="!myForm.disabled" class="flex justify-end items-center gap-3">
+				<button dtvTextButton label="Cancelar" color="secondary" design="outlined" type="reset" class="w-40" (click)="cancel()"></button>
+
+				<button dtvTextButton label="Guardar" color="secondary" design="filled" type="submit" class="w-40"></button>
+			</div>
+		</form>
+	</ng-template>
+</p-panel>

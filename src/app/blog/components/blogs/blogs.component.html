@@ -1,0 +1,21 @@
+<div class="blog-layout max-w-6xl mx-auto">
+	<div *ngFor="let blog of blogs" class="blog shadow rounded xl:flex">
+		<div class="h-60 xl:basis-60">
+			<img class="w-full h-full object-cover" [src]="blog.imagePath | image" />
+		</div>
+
+		<div class="p-3 xl:flex-1">
+			<h3 class="text-2xl font-semibold text-gray-700 after:h-1 after:bg-green-400 after:block after:mt-2 after:w-3/4 after:content-['']">{{ blog.title }}</h3>
+
+			<p class="mt-3 font-medium text-gray-600"><i class="pi pi-user mr-2"></i>{{ blog.author }}</p>
+
+			<p class="mb-5 text-gray-500 text-sm"><i class="pi pi-calendar mr-2"></i>{{ blog.createdAt | date:"short" }}</p>
+
+			<p class="leading-7 font-normal text-gray-600">{{ blog.summary }}</p>
+		</div>
+
+		<div class="p-3 text-right">
+			<a dtvTextButton label="Ver detalles" color="tertiary" design="filled" [routerLink]="['/blog', blog.blogId]"></a>
+		</div>
+	</div>
+</div>

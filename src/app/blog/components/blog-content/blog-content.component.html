@@ -1,0 +1,31 @@
+<div class="my-10 flex flex-col justify-center items-center gap-7 lg:flex-row lg:gap-16 lg:my-14">
+	<i class="pi pi-th-large text-green-300 text-2xl rotate-45 lg:text-3xl"></i>
+
+	<h2 class="text-center font-bold text-3xl lg:tet-4xl lg:max-w-3xl">{{ blog.title }}</h2>
+
+	<i class="pi pi-th-large text-green-300 text-2xl rotate-45 lg:text-3xl"></i>
+</div>
+
+<div class="max-w-4xl mx-auto mb-5 max-h-64 sm:max-h-72 md:max-h-80 lg:max-h-96">
+	<img class="w-full h-auto object-cover max-h-64 sm:max-h-72 md:max-h-80 lg:max-h-96" [src]="blog.imagePath | image" />
+</div>
+
+<div class="mb-5 max-w-3xl mx-auto flex items-center gap-10">
+	<p class="font-medium text-gray-600"><i class="pi pi-user mr-2"></i>{{ blog.author }}</p>
+
+	<p class="text-gray-500 text-sm"><i class="pi pi-calendar mr-2"></i>{{ blog.createdAt | date:"short" }}</p>
+</div>
+
+<div class="max-w-3xl mx-auto mb-10 px-4 py-2 rounded-sm border border-l-4 border-gray-300 bg-gray-100 text-slate-600 text-lg">
+	<p>{{ blog.summary }}</p>
+</div>
+
+<div class="max-w-3xl mx-auto mb-10">
+	<p class="leading-7 tracking-wide mb-5">{{ blog.body }}</p>
+
+	<div *ngFor="let blogSection of blog.blogSections" class="mb-5">
+		<h3 *ngIf="blogSection.subtitle" class="mb-2 font-semibold text-2xl tracking-wide">{{ blogSection.subtitle }}</h3>
+
+		<p class="leading-7 tracking-wide">{{ blogSection.body }}</p>
+	</div>
+</div>

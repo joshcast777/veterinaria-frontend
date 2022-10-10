@@ -1,0 +1,35 @@
+<h2 class="max-w-3xl mb-7 text-center font-bold text-5xl">Citas</h2>
+
+<div class="mb-7 flex justify-end">
+	<button type="button" dtvTextButton label="Agendar cita" design="filled" routerLink="/user/appointments/new"></button>
+</div>
+
+<div *ngIf="Appointments.length === 0;else table" class="ctr px-2">
+	<p-messages [(value)]="message" [closable]="false"></p-messages>
+</div>
+
+<ng-template #table>
+	<table class="mx-auto rounded-sm divide-y divide-slate-300 border border-slate-300 mb-10">
+		<thead class="bg-gray-100">
+			<tr>
+				<th scope="col" class="px-3 py-2 w-48 font-semibold text-lg">Fecha de la cita</th>
+				<th scope="col" class="px-3 py-2 w-48 font-semibold text-lg">Nombres</th>
+				<th scope="col" class="px-3 py-2 w-48 font-semibold text-lg">Motivo</th>
+				<th scope="col" class="px-3 py-2 w-48 font-semibold text-lg">Fecha de creación</th>
+				<th scope="col" class="px-3 py-2 w-48 font-semibold text-lg">Acciones</th>
+			</tr>
+		</thead>
+
+		<tbody class="bg-gray-50 divide-y divide-slate-300">
+			<tr *ngFor="let appointment of Appointments">
+				<td class="px-3 py-2 text-center">{{ appointment.appointmentDate | date:"short" }}</td>
+				<td class="px-3 py-2 text-center">{{ appointment.user.name + " " + appointment.user.lastName }}</td>
+				<td class="px-3 py-2 text-center">{{ appointment.reasons }}</td>
+				<td class="px-3 py-2 text-center">{{ appointment.createdAt | date:"short" }}</td>
+				<td class="px-3 py-2 text-center">
+					<button type="button" dtvIconButton primeIcon="pi-trash" (click)="delete(appointment.appointmentId)"></button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</ng-template>
